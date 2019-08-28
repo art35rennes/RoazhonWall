@@ -1,0 +1,36 @@
+const tmi = require('tmi.js');
+
+const options = {
+	options: {
+		debug: true,
+	},
+	connection: {
+		cluster: 'ovh',
+	reconnect: true,
+	},
+	identity: {
+		username: 'DevBot',
+		password: 'oauth:d47f2m79j5bl05d7yx3xogdfjnb32q'
+	},
+	channels: [
+		'Youtopie'
+		],
+};
+
+const client = new tmi.client(options);
+
+client.connect();
+client.on('connected', (address, port) => {
+
+	client.action('Youtopie', 'Hello there ! Le bot est en ligne ;)');
+});
+
+client.on('chat', (channel, user, message, self) => {
+	if(message === '!info'){
+		client.action(channel, 'Salut');
+	}
+
+	client.action(channel, `Yo, ${user['display-name']}`);
+});
+console.log(client.getUsername() + " s'est connecté sur : " + adress + ", port : " + port);
+    client.say("votre nom de chaine", "Hello Twitch ! I'm a real human Kappa");

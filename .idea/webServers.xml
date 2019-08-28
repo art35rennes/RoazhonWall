@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="dd7f470b-4ac9-48b5-92df-5de18e7edebd" name="Sandbox OVH" url="http://137.74.175.224">
+        <fileTransfer host="137.74.175.224" port="22" rootFolder="/sftpuser/botRck" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
