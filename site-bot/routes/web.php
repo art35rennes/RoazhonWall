@@ -11,6 +11,19 @@
 |
 */
 
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/table/{table}', "TableController@show");
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/cgu', function () {
+        return view('cgu');
+    });
+});
+
+Auth::routes();
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
+//    return view('welcome');
 });
