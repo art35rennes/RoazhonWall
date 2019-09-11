@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Arthur Sicard">
 
-    <title>Earthquake</title>
+    <title>Roazhon Wall</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{URL::asset("fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">

@@ -16,9 +16,11 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/cgu', function () {
-        return view('cgu');
-    });
+    Route::get('/question/add', function () {return view("game.add_question");});
+    Route::post('/question/add', 'QuestionController@add');
+    Route::get('/question/view/{id}', 'QuestionController@show');
+
+    Route::get('/cgu', function () {return view('cgu');});
 });
 
 Auth::routes();

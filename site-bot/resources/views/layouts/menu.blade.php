@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Arthur Sicard">
 
-    <title>TwitchBot RCK</title>
+    <title>Roazhon Wall</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{URL::asset("fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
@@ -31,9 +31,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-toilet-paper"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">TwitchBot</div>
+                <div class="sidebar-brand-text mx-3">Roazhon Wall</div>
             </a>
 
             <!-- Divider -->
@@ -49,25 +49,24 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-{{--            <!-- Heading -->--}}
-{{--            <div class="sidebar-heading">--}}
-{{--                Interface--}}
-{{--            </div>--}}
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Jeu
+            </div>
 
-{{--            <!-- Nav Item - Pages Collapse Menu -->--}}
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">--}}
-{{--                    <i class="fas fa-fw fa-cog"></i>--}}
-{{--                    <span>Components</span>--}}
-{{--                </a>--}}
-{{--                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">--}}
-{{--                    <div class="bg-white py-2 collapse-inner rounded">--}}
-{{--                        <h6 class="collapse-header">Custom Components:</h6>--}}
-{{--                        <a class="collapse-item" href="buttons.html">Buttons</a>--}}
-{{--                        <a class="collapse-item" href="cards.html">Cards</a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </li>--}}
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-question"></i>
+                    <span>Questions</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/question/add"><i class="fas fa-plus fa-fw"></i> Ajouter</a>
+                        <a class="collapse-item" href="/question/view"><i class="fas fa-list fa-fw"></i> Liste</a>
+                    </div>
+                </div>
+            </li>
 
 {{--            <!-- Nav Item - Utilities Collapse Menu -->--}}
 {{--            <li class="nav-item">--}}
@@ -130,12 +129,12 @@
                 </a>
                 <div id="collapseTables" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/table/answer">Answer</a>
-                        <a class="collapse-item" href="/table/asked">Asked</a>
-                        <a class="collapse-item" href="/table/game">Game</a>
-                        <a class="collapse-item" href="/table/played">Played</a>
-                        <a class="collapse-item" href="/table/player">Player</a>
-                        <a class="collapse-item" href="/table/question">Question</a>
+                        <a class="collapse-item" href="/table/answers">Answer</a>
+                        <a class="collapse-item" href="/table/askeds">Asked</a>
+                        <a class="collapse-item" href="/table/games">Game</a>
+                        <a class="collapse-item" href="/table/playeds">Played</a>
+                        <a class="collapse-item" href="/table/players">Player</a>
+                        <a class="collapse-item" href="/table/questions">Question</a>
                     </div>
                 </div>
             </li>

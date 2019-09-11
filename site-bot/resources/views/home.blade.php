@@ -1,6 +1,7 @@
 @extends('layouts.menu')
 
 @section('content')
+    <h5>Statistiques & Informations</h5>
 <div class="row">
     <div class="col-8">
         <div class="row mb-4">
@@ -104,7 +105,7 @@
                     </div>
                     <div class="card-body">
                         <p>Actuellement, le site n'est pas fonctionnel, seul le template a été implémenté.</p>
-                        <p>Les éléments visibles sont susceptibles d'être changés ou modifier.</p>
+                        <p>Les éléments visibles sont susceptibles d'être changés ou modifié.</p>
                     </div>
                 </div>
             </div>

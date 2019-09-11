@@ -2,11 +2,10 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 
-class Answer
+class Answer extends Model
 {
 
     /**
@@ -15,7 +14,7 @@ class Answer
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'id_question', 'text', 'image', 'true',
     ];
 
     /**
@@ -24,7 +23,6 @@ class Answer
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
     ];
 
     /**
@@ -33,6 +31,9 @@ class Answer
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'id_question' => 'int',
+        'text' => 'string',
+        'image' => 'string',
+        'true' => 'bool',
     ];
 }
