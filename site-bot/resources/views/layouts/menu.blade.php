@@ -17,6 +17,8 @@
 
     <!-- Custom styles for this template-->
     <link href="{{URL::asset("css/sb-admin-2.min.css")}}" rel="stylesheet">
+    <link href="{{URL::asset("css/general.css")}}" rel="stylesheet">
+    @yield('css')
 
 </head>
 

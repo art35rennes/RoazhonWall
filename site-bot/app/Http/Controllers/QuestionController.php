@@ -16,7 +16,37 @@ class QuestionController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function view($id=null){
-        return view('', ["question" => Question::getQuestions($id)]);
+        if($id == null){
+            return view('game.view_question', [
+                'headers'=>['1'=>'Numéro','2'=>'Question','3'=>'Type','5'=>'Modifier le'],
+//            'headers'=>['1'=>'Id','2'=>'Question','3'=>'Réponse','4'=>'Image','5'=>'Modifier le'],
+                "datas" => Question::getQuestionsListe(),
+                "id" => null
+            ]);
+        }else{
+//            dd(Question::getQuestions($id));
+            $r = Question::getQuestions($id);
+            if (count($r["answer"]) > 1){
+                $type = "QCM";
+            }else{
+                if (count($r["answer"]) == 0){
+                    $type = "Non définie";
+                }else{
+                    if ($r["answer"][0]->image != ""){
+                        $type = "Image Mystère";
+                    }else{
+                        $type = "Question simple";
+                    }
+                }
+
+            }
+            return view('game.view_question', [
+                "datas" => $r,
+                "type"=> $type,
+                "id" => $id
+            ]);
+        }
+
     }
 
     public function add(Request $request){
@@ -42,9 +72,9 @@ class QuestionController extends BaseController
                 }
                 break;
             case "i":
-                $path1 = $request->file('imageQ')->store('images/questions');
+                $path1 = $request->file('imageQ')->store('images/questions',"public");
                 $question->image = $path1;
-                $path2 = $request->file('imageA')->store('images/reponses');
+                $path2 = $request->file('imageA')->store('images/reponses',"public");
                 array_push($answers, new Answer());
                 last($answers)->image = $path2;
                 break;

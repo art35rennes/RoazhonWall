@@ -18,9 +18,10 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/question/add', function () {return view("game.add_question");});
     Route::post('/question/add', 'QuestionController@add');
-    Route::get('/question/view/{id}', 'QuestionController@show');
+    Route::get('/question/view/{id?}', 'QuestionController@view');
 
     Route::get('/cgu', function () {return view('cgu');});
+
 });
 
 Auth::routes();

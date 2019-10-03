@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a8b7b7-5c3d-4155-ad24-0ad6bbc89c61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site-bot/app/Question.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site-bot/public/js/question.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site-bot/resources/views/game/add_question.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/RessourceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site-bot/public/css/general.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site-bot/resources/views/game/view_question.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/app/Answer.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Answer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/QuestionrController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/public/js/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/js/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/resources/views/404.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/404.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/resources/views/layouts/custom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/layouts/custom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/QuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Question.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/datatables/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/datatables/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/js/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/js/question.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/layouts/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/resources/views/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/routes/web.php" afterDir="false" />
@@ -34,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -137,16 +134,21 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/site-bot/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/site-bot/app/Http/Controllers" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Arthur\Documents\GitHub\botRCK\site-bot\storage\app\public" />
+      <recent name="D:\Users\Arthur\Documents\GitHub\botRCK\site-bot\storage\app" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Arthur\Documents\GitHub\botRCK\site-bot\app\Http\Controllers" />
       <recent name="D:\Users\Arthur\Documents\GitHub\botRCK\site-bot\app" />
       <recent name="D:\Users\Arthur\Documents\GitHub\botRCK\site-bot\resources\views" />
-      <recent name="D:\Users\Arthur\Documents\GitHub\botRCK\site-bot\app\Http\Controllers" />
       <recent name="D:\Users\Arthur\Documents\GitHub\botRCK\site-bot\public" />
     </key>
   </component>
@@ -180,6 +182,8 @@
       <workItem from="1566945277036" duration="2381000" />
       <workItem from="1567006044889" duration="73000" />
       <workItem from="1567886789778" duration="36432000" />
+      <workItem from="1569431908977" duration="13005000" />
+      <workItem from="1569981713613" duration="10471000" />
     </task>
     <servers />
   </component>
@@ -191,7 +195,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

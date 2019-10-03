@@ -46,3 +46,8 @@ $(".tQ").change(function () {
     }
     $(".aQ").attr("disabled", false);
 });
+
+$(".fa-eye").click(function () {
+   $id = $(this).parent().parent().children(":first-child").html();
+   window.open('/question/view/'+$id, '_parent');
+});

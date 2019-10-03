@@ -7,7 +7,7 @@
         </div>
         <div class="card-body">
             <div class="">
-                <table class="table table-bordered" id="dataTable"  cellspacing="0">
+                <table class="table table-bordered dataTable"  cellspacing="0">
                     <thead>
                     <tr>
                         @foreach($headers as $header)

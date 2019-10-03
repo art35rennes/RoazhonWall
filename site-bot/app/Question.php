@@ -36,15 +36,21 @@ class Question extends Model
     ];
 
     static public function getQuestions($id=null){
-        if($id){
-            return DB::table('questions')
-                ->select(['id','text','image'])
+        if($id != null){
+            $question = DB::table('questions')
+                ->select(['id','text','image','updated_at'])
+                ->where('id', "=",$id)
                 ->get();
+            $answer = DB::table("answers")
+                ->select(['id', 'text', 'image', 'true', 'updated_at'])
+                ->where('id_question', "=", $id)
+                ->get();
+
+            return ["question" => $question, "answer" => $answer ];
         }
         else{
             return DB::table('questions')
                 ->select(['id','text','image'])
-                ->where('id', "=",$id)
                 ->get();
         }
 
@@ -55,5 +61,10 @@ class Question extends Model
             ->select('id')
             ->orderBy('created_at','desc')
             ->get()[0]->id;
+    }
+
+    static public function getQuestionsListe(){
+//        dd( DB::table('questions_liste')->select()->get());
+        return DB::table('questions_liste')->select()->get();
     }
 }
