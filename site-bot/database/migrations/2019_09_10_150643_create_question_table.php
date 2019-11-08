@@ -17,6 +17,7 @@ class CreateQuestionTable extends Migration
             $table->bigIncrements('id')->unique();
             $table->text('text');
             $table->text('image')->nullable();
+            $table->integer('state')->default(0);
             $table->timestamps();
         });
     }

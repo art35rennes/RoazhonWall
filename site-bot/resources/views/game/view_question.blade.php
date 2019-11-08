@@ -73,7 +73,7 @@
                         <h6>Réponse</h6>
                         <ul>
                         @foreach($datas['answer'] as $answer)
-                            <li>Réponse {{$answer->id}} : {{$answer->text}} <span class="font-weight-light">(@if($answer->true) vrai @else faux @endif\)</span></li>
+                            <li>Id {{$answer->id}} : {{$answer->text}} <span class="font-weight-light">(@if($answer->true) vrai @else faux @endif&nbsp;)</span></li>
                         @endforeach
                         </ul>
                     </div>

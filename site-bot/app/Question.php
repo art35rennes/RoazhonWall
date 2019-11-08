@@ -67,4 +67,8 @@ class Question extends Model
 //        dd( DB::table('questions_liste')->select()->get());
         return DB::table('questions_liste')->select()->get();
     }
+
+    static public function getQuestionResume(){
+        return DB::select(DB::raw('SELECT questions.text, questions.id, COUNT(askeds.id_question) AS recurrence FROM askeds LEFT JOIN questions ON questions.id = askeds.id_question GROUP BY askeds.id_question ORDER BY recurrence ASC'));
+    }
 }

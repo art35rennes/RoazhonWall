@@ -1,0 +1,12 @@
+.fa-crown:hover{
+    color: gold;
+    cursor: pointer;
+}
+.fa-level-down-alt:hover{
+    color: purple;
+    cursor: pointer;
+}
+.fa-ban:hover{
+    color: red;
+    cursor: pointer;
+}

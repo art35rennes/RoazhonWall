@@ -109,6 +109,11 @@
                         <input type="file" class="custom-file-input" id="imageA" name="imageA">
                         <label class="custom-file-label" for="imageA">Image nette</label>
                     </div>
+{{--                TODO input hidden some time--}}
+                    <div class="col-6 mb-3">
+                        <label>Réponse texte :</label>
+                        <input type="text" class="form-control form-control-user @error('reponse_image') is-invalid @enderror" id="reponse_image" name="reponse_image" placeholder="..." value="{{ old('reponse_image') }}">
+                    </div>
             </div>
 
             <button type="submit" class="aQ btn btn-primary btn-user btn-block col-2 mt-3" disabled>

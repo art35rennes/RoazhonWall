@@ -70,6 +70,20 @@
                 </div>
             </li>
 
+            <!-- Nav Item - Lancer partie -->
+            <li class="nav-item">
+                <a class="nav-link" href="/game/start">
+                    <i class="fas fa-fw fa-gamepad"></i>
+                    <span>Lancer une partie</span></a>
+            </li>
+
+            <!-- Nav Item - Reprendre partie -->
+            <li class="nav-item">
+                <a class="nav-link" href="/game/current">
+                    <i class="fas fa-fw fa-angle-double-right"></i>
+                    <span>Reprendre partie</span></a>
+            </li>
+
 {{--            <!-- Nav Item - Utilities Collapse Menu -->--}}
 {{--            <li class="nav-item">--}}
 {{--                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">--}}

@@ -13,7 +13,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Questions ajoutées</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$stats["nbQuest"]}}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-question fa-2x text-gray-300"></i>
@@ -29,7 +29,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Partie jouée</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$stats["nbGame"]}}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-gamepad fa-2x text-gray-300"></i>
@@ -45,7 +45,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Joueur unique</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$stats["nbJoueurs"]}}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -71,12 +71,15 @@
                         <div class="mt-4 text-center small">
                 <span class="mr-2">
                   <i class="fas fa-circle text-primary"></i> QCM
+                    <input type="hidden" id="cpt_qcm" value="{{$stats['cpt']['qcm']}}">
                 </span>
                             <span class="mr-2">
                   <i class="fas fa-circle text-success"></i> Image
+                                <input type="hidden" id="cpt_image" value="{{$stats['cpt']['image']}}">
                 </span>
                             <span class="mr-2">
                   <i class="fas fa-circle text-info"></i> Ouverte
+                                <input type="hidden" id="cpt_simple" value="{{$stats['cpt']['simple']}}">
                 </span>
                         </div>
                     </div>
@@ -104,7 +107,6 @@
                         Work in progress
                     </div>
                     <div class="card-body">
-                        <p>Actuellement, le site n'est pas fonctionnel, seul le template a été implémenté.</p>
                         <p>Les éléments visibles sont susceptibles d'être changés ou modifié.</p>
                     </div>
                 </div>
@@ -119,7 +121,7 @@
             </div>
             <div class="card-body">
                 <div class="">
-                    <table class="table table-bordered" id="dataTable"  cellspacing="0">
+                    <table class="table table-bordered" cellspacing="0">
                         <thead>
                         <tr>
                             <th>Rang</th>
@@ -128,46 +130,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Arthur</td>
-                            <td>253</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Augustin</td>
-                            <td>234</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Youtopie</td>
-                            <td>128</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Arthur</td>
-                            <td>253</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Augustin</td>
-                            <td>234</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Youtopie</td>
-                            <td>128</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Augustin</td>
-                            <td>234</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Youtopie</td>
-                            <td>128</td>
-                        </tr>
+                        @foreach($stats['leaderBoard'] as $player)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$player->pseudo}}</td>
+                                <td>{{$player->score}}</td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

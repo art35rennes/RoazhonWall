@@ -17,6 +17,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/question/add', function () {return view("game.add_question");});
+    Route::get('/game/start', 'GameController@start');
+    Route::get('/game/current', 'GameController@play');
     Route::post('/question/add', 'QuestionController@add');
     Route::get('/question/view/{id?}', 'QuestionController@view');
 

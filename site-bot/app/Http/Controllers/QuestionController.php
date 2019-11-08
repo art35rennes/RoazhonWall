@@ -77,6 +77,7 @@ class QuestionController extends BaseController
                 $path2 = $request->file('imageA')->store('images/reponses',"public");
                 array_push($answers, new Answer());
                 last($answers)->image = $path2;
+                last($answers)->text = $request->get('reponse_image');
                 break;
         }
         $question->save();
