@@ -10,3 +10,11 @@
     color: red;
     cursor: pointer;
 }
+.fa-play-circle:hover{
+    cursor: pointer;
+    color: green;
+}
+.fa-times-circle:hover{
+    cursor: pointer;
+    color: red;
+}

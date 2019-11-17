@@ -15,6 +15,10 @@ class QuestionController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function stateChange(Request $state){
+        return 501;
+    }
+
     public function view($id=null){
         if($id == null){
             return view('game.view_question', [
@@ -88,6 +92,5 @@ class QuestionController extends BaseController
 //        dd($request);
 
         return view('game.add_question')->withInput($request->input());
-
     }
 }

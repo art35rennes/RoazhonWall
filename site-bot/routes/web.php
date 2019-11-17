@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/table/{table}', "TableController@show");
 
@@ -19,11 +22,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/question/add', function () {return view("game.add_question");});
     Route::get('/game/start', 'GameController@start');
     Route::get('/game/current', 'GameController@play');
+
+    Route::post('/game/state/{state}', 'QuestionController@stateChange');
+    Route::post('/game/player/{state}', 'PlayerController@stateChange');
+
     Route::post('/question/add', 'QuestionController@add');
     Route::get('/question/view/{id?}', 'QuestionController@view');
 
     Route::get('/cgu', function () {return view('cgu');});
-
 });
 
 Auth::routes();

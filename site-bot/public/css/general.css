@@ -2,3 +2,11 @@
     cursor: pointer;
     color: dodgerblue;
 }
+
+.table td.fit,
+.table th.fit,
+.table td.data-fit,
+.table th.data-fit {
+    white-space: nowrap;
+    width: 1%;
+}

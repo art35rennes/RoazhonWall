@@ -36,4 +36,11 @@ class Answer extends Model
         'image' => 'string',
         'true' => 'bool',
     ];
+
+    static public function getAnswersFor($id){
+        return DB::table('answers')
+            ->select(['text', 'image', 'true'])
+            ->where('id_question', "=", $id)
+            ->get();
+    }
 }

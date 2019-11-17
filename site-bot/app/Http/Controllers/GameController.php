@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use App\Game;
 use App\Question;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -16,13 +17,12 @@ class GameController extends BaseController
     }
 
     public function play(){
-        return view("game.current", dd([
+        return view("game.current", (([
             "current"=>Game::getCurrentGame(),
             "players"=>Game::getPlayerListe(),
-            "questions"=>[
-                "resume"=>Question::getQuestionResume(),
-                "liste"=>Question::getQuestionsListe()
-            ]
-        ]));
+            "questions"=>Question::getQuestionResume(),
+            "cQuestion"=>Question::getCurrentQuestion(),
+            "answer"=>Answer::getAnswersFor(Question::getCurrentQuestion('id'))
+        ])));
     }
 }

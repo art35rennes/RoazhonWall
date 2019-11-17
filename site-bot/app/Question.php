@@ -69,6 +69,39 @@ class Question extends Model
     }
 
     static public function getQuestionResume(){
-        return DB::select(DB::raw('SELECT questions.text, questions.id, COUNT(askeds.id_question) AS recurrence FROM askeds LEFT JOIN questions ON questions.id = askeds.id_question GROUP BY askeds.id_question ORDER BY recurrence ASC'));
+        return DB::select(DB::raw('
+SELECT questions_liste.id, questions_liste.text, questions_liste.image, questions_liste.reponses, qFrequence.frequence, questions.state
+FROM questions_liste
+LEFT JOIN 
+(SELECT askeds.id_question, COUNT(askeds.id_question) AS frequence 
+ FROM askeds GROUP BY askeds.id_question) AS qFrequence ON qFrequence.id_question = questions_liste.id
+LEFT JOIN questions ON questions.id = questions_liste.id
+'));
+    }
+
+    static public function getCurrentQuestion($col = null){
+        if ($col == null){
+//            dd(1);
+            return DB::table('questions')
+                ->select(['id', 'text', 'image', 'state', 'updated_at'])
+                ->where('state', '!=', 0)
+                ->limit(1)
+                ->get();
+        }else{
+            $answer = DB::table('questions')
+                ->select($col)
+                ->where('state', '!=', 0)
+                ->limit(1)
+                ->get();
+            if($answer->count()>0){
+//                dd(3);
+                return $answer->first()->$col;
+            }else{
+//                dd(4);
+                return null;
+            }
+
+        }
+
     }
 }
