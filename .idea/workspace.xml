@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a8b7b7-5c3d-4155-ad24-0ad6bbc89c61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/site-bot/public/js/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/app/Answer.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Answer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/GameController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/PlayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/PlayerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/QuestionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/public/css/current.css" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/css/current.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/public/css/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/css/general.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/js/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/js/current.js" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/js/current.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/resources/views/game/current.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/game/current.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/resources/views/layouts/custom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/layouts/custom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/layouts/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +23,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/site-bot/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -58,7 +56,6 @@
       <path value="$PROJECT_DIR$/site-bot/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/site-bot/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/site-bot/vendor/jakub-onderka/php-console-color" />
-      <path value="$PROJECT_DIR$/site-bot/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/site-bot/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/site-bot/vendor/jakub-onderka/php-console-highlighter" />
       <path value="$PROJECT_DIR$/site-bot/vendor/monolog/monolog" />
@@ -136,6 +133,7 @@
       <path value="$PROJECT_DIR$/site-bot/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/site-bot/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/site-bot/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/site-bot/vendor/opis/closure" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Q1k1fU4sqQYSYdECq5XcnymtDg" />
@@ -155,6 +153,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
@@ -206,7 +205,7 @@
       <workItem from="1573064824393" duration="3854000" />
       <workItem from="1573166994945" duration="12357000" />
       <workItem from="1573574021522" duration="14826000" />
-      <workItem from="1574006839090" duration="10944000" />
+      <workItem from="1574006839090" duration="22193000" />
     </task>
     <servers />
   </component>

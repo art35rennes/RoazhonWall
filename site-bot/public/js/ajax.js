@@ -9,7 +9,7 @@ function sendAjax($url, $datas = null, $id='#server-results') {
         var request_method = 'POST'; //get form GET/POST method
         var form_data = JSON.stringify($datas, null, 1);
 
-        // console.log($('meta[name="csrf-token"]').attr('content'));
+        // console.log(form_data);
 
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -20,29 +20,41 @@ function sendAjax($url, $datas = null, $id='#server-results') {
             cache: false,
             processData: false
         }).done(function (response) {
-            $json = JSON.parse(response);
-            console.log($json);
+            console.log(response);
+            // $json = JSON.parse(response);
+            // console.log($json);
+            window.location.reload();
+            //TODO toast & dynamic reload
+
             // $($id).html(alerteInfo($json[0].alert,$json[1]));
         });
     }
     else {
-        // console.log("else");
+        console.log("else");
         // $($id).html(alerteInfo('info',"Aucune donnée à envoyer.",));
     }
 }
 
 $(".fa-crown").click(function () {
-    sendAjax("/game/player/upstate", [{id:$(this).parent().children(':last-child').val()}]);
+    sendAjax("/game/player/upstate/"+$(this).parent().children(':last-child').val(), []);
 });
 $(".fa-ban").click(function () {
-    sendAjax("/game/player/ban", [{id:$(this).parent().children(':last-child').val()}]);
+    sendAjax("/game/player/ban/"+$(this).parent().children(':last-child').val(), []);
 });
 $(".fa-level-down-alt").click(function () {
-    sendAjax("/game/player/downstate", [{id:$(this).parent().children(':last-child').val()}]);
+    sendAjax("/game/player/downstate/"+$(this).parent().children(':last-child').val(), []);
 });
 $(".fa-times-circle").click(function () {
-    sendAjax("/game/state/dismiss", [{id:$(this).parent().children(':last-child').val()}]);
+    sendAjax("/game/state/dismiss/"+$(this).parent().children(':last-child').val(), []);
 });
 $(".fa-play-circle").click(function () {
-    sendAjax("/game/state/play", [{id:$(this).parent().children(':last-child').val()}]);
+    sendAjax("/game/state/play/"+$(this).parent().children(':last-child').val(), []);
 });
+$("#giveAnswer").click(function () {
+    sendAjax("/game/question/reply/", []);
+});
+$("#nextQuestion").click(function () {
+    sendAjax("/game/question/next/", []);
+});
+
+

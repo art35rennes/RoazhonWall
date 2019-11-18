@@ -23,8 +23,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/game/start', 'GameController@start');
     Route::get('/game/current', 'GameController@play');
 
-    Route::post('/game/state/{state}', 'QuestionController@stateChange');
-    Route::post('/game/player/{state}', 'PlayerController@stateChange');
+    Route::post('/game/state/{state}/{id}', 'QuestionController@stateChange');
+    Route::post('/game/player/{state}/{id}', 'PlayerController@stateChange');
+    Route::post('/game/question/reply/', 'QuestionController@giveAnswer');
+    Route::post('/game/question/next/', 'QuestionController@nextQuestion');
+    Route::get('/game/question/next/', 'QuestionController@nextQuestion');
 
     Route::post('/question/add', 'QuestionController@add');
     Route::get('/question/view/{id?}', 'QuestionController@view');

@@ -68,6 +68,19 @@ class Question extends Model
         return DB::table('questions_liste')->select()->get();
     }
 
+    static public function setRandomQuestion(){
+        $id = DB::select(DB::raw("
+SELECT DISTINCT questions.id FROM questions 
+LEFT JOIN (SELECT * FROM askeds WHERE askeds.id_game = 2) AS ask ON ask.id_question = questions.id 
+LEFT JOIN (SELECT askeds.id_question, COUNT(askeds.id_question) AS frequence FROM askeds GROUP BY askeds.id_question) AS qFrequence ON qFrequence.id_question = questions.id 
+WHERE ask.id_question IS NULL 
+"));
+//        dd($id[0]->id);
+
+        DB::table("questions")
+        ->where("id", "=", $id[0]->id)
+        ->update(['state'=>1]);
+    }
     static public function getQuestionResume(){
         return DB::select(DB::raw('
 SELECT questions_liste.id, questions_liste.text, questions_liste.image, questions_liste.reponses, qFrequence.frequence, questions.state
@@ -84,13 +97,13 @@ LEFT JOIN questions ON questions.id = questions_liste.id
 //            dd(1);
             return DB::table('questions')
                 ->select(['id', 'text', 'image', 'state', 'updated_at'])
-                ->where('state', '!=', 0)
+                ->where('state', '>', 0)
                 ->limit(1)
                 ->get();
         }else{
             $answer = DB::table('questions')
                 ->select($col)
-                ->where('state', '!=', 0)
+                ->where('state', '>', 0)
                 ->limit(1)
                 ->get();
             if($answer->count()>0){

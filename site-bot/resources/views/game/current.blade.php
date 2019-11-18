@@ -42,7 +42,9 @@
                     </thead>
                     <tbody>
                         @foreach($questions as $key=>$question)
-                        <tr>
+                        <tr @if($question->state > 0) class="bg-success text-white" @endif
+                            @if($question->state == -1) class="bg-info text-white" @endif>
+
                             <td>{{$question->text}}</td>
                             <td>
                                 @switch($question->reponses)
@@ -65,7 +67,9 @@
                                     <i class="fas fa-play-circle"></i>
                                 @break
                                 @case(-1)
+{{--                                TODO JS can be better--}}
                                     <i class="fas fa-forward"></i>
+                                    <i class="fas fa-times-circle"></i>
                                 @break
                                 @default
                                     <i class="fas fa-times-circle"></i>
@@ -83,7 +87,7 @@
         @if(isset($cQuestion[0]))
             <div class="card shadow mb-4 col-12">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Question en cours | @if($cQuestion[0]->state == 1) <button class="btn btn-success btn-user btn-sm">Donner réponse</button> @else <button class="btn btn-info btn-user btn-sm">Question suivante</button> @endif </h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Question en cours | @if($cQuestion[0]->state == 1) <button class="btn btn-success btn-user btn-sm" id="giveAnswer">Donner réponse</button> @else <button class="btn btn-info btn-user btn-sm" id="nextQuestion">Question suivante</button> @endif </h6>
                 </div>
                 <div class="card-body">
                     <div class="row">
