@@ -3,10 +3,10 @@
 @section('content')
     <h5>Statistiques & Informations</h5>
 <div class="row">
-    <div class="col-8">
+    <div class="col-xl-8">
         <div class="row mb-4">
             {{--Ligne stats--}}
-            <div class="col-4">
+            <div class="col-md-4">
                 {{--Nombre de question--}}
                 <div class="card border-left-primary shadow h-100 py-2">
                     <div class="card-body">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 {{--Nombre de partie--}}
                 <div class="card border-left-primary shadow h-100 py-2">
                     <div class="card-body">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 {{--Nombre de joueur unique--}}
                 <div class="card border-left-primary shadow h-100 py-2">
                     <div class="card-body">
@@ -57,7 +57,7 @@
         </div>
         <div class="row">
             {{--Repartition question--}}
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -86,22 +86,22 @@
                 </div>
             </div>
             {{--Etat--}}
-            <div class="col-6">
-                <div class="card bg-secondary text-white shadow mb-3">
-                    <div class="card-body">
-                        Aucun Roazhon Wall en cours
-                        <div class="text-white-50 small">#4e73df</div>
-                    </div>
-                </div>
-                <div class="card bg-info text-white shadow">
-                    <div class="card-body">
-                        Roazhon Wall du 06/08/2019
-                        <div class="text-white-50 small">
-                            <span>Joueurs</span><span class="badge badge-danger badge-counter ml-1">247</span>
-                            <span class="ml-2">Durée</span><span class="badge badge-danger badge-counter ml-1">0:53</span>
+            <div class="col-md-6">
+                @if($stats['cGame'])
+                    <div class="card bg-success text-white shadow mb-3">
+                        <div class="card-body">
+                            Partie en cours !
+                            <div class="text-white-50 small">{{$stats['cGame']->nom}} <a class="stretched-link text-white font-weight-bold" href="/game/current">Reprendre</a></div>
                         </div>
                     </div>
-                </div>
+                @else
+                    <div class="card bg-info text-white shadow mb-3">
+                        <div class="card-body">
+                            Aucun Roazhon Wall en cours
+                            <div class="text-white-50 small"><a class="stretched-link text-white font-weight-bold" href="/game/current">Commencer !</a></div>
+                        </div>
+                    </div>
+                @endif
                 <div class="card mb-4 mt-3">
                     <div class="card-header">
                         Work in progress
@@ -114,7 +114,7 @@
         </div>
     </div>
     {{--Top Joueur--}}
-    <div class="col-4">
+    <div class="col-xl-4">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Top Joueur</h6>

@@ -7,12 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'nom', 'size'
+    ];
+
     static public function gameIsInProgress(){
         $cGame = DB::table('games')
             ->select(['id', 'nom','end_at'])
             ->where('end_at', "=", null)
             ->get();
-        
+
         if ($cGame->count()>0){
             return $cGame->first();
         }else{
@@ -24,7 +33,7 @@ class Game extends Model
         $cGame = DB::table('games')
             ->where('end_at', "=", null)
             ->get();
-        
+
         if ($cGame->count()>0){
             return $cGame->first();
         }else{

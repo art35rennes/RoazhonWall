@@ -3,7 +3,7 @@
 @section("content")
     <h5>Lancer une nouvelle partie</h5>
     <div class="container-fluid">
-        <form method="post" action="/game/start" enctype="multipart/form-data">
+        <form method="post" action="/game/new" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group row">
@@ -44,6 +44,7 @@
     </form>
     </div>
 
+    @if($current)
     <div class="modal fade show" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -61,6 +62,7 @@
             </div>
         </div>
     </div>
+    @endif
 @endsection
 
 @section('js')

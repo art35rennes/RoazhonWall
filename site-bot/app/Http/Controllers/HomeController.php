@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -55,7 +56,8 @@ ORDER BY `score` DESC LIMIT 15"));
             "nbGame" => $nbGame,
             "nbJoueurs" => $nbJoueurs,
             "leaderBoard" => $leaderBord,
-            "cpt" => $cpt
+            "cpt" => $cpt,
+            "cGame" => Game::getCurrentGame(),
         ];
     }
     /**

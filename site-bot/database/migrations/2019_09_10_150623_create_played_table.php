@@ -20,7 +20,7 @@ class CreatePlayedTable extends Migration
             $table->foreign('id_game')->references('id')->on('games');
             $table->foreign('id_player')->references('id')->on('players');
             $table->integer('score')->default(0);
-            $table->enum('type', ['challenger', 'joueur'])->default('joueur');
+            $table->enum('type', ['challenger', 'joueur', 'joueur_c'])->default('joueur');
             $table->timestamps();
         });
     }

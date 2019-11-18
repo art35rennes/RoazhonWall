@@ -14,6 +14,38 @@ class PlayerController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+     public function setRandomChallenger(){
+        $Game = Game::getCurrentGame();
+//        Remove Old Challenger
+        DB::table("playeds")
+            ->where([
+                ['id_game', $Game->id],
+                ['type', "challenger"]
+            ])
+            ->update(['type'=>'joueur_c']);
+//        Set New Challenger
+        $players = DB::table("playeds")
+            ->select()
+            ->where([
+                ['id_game', $Game->id],
+                ['type', "joueur"]
+            ])
+            ->get();
+
+        if (count($players) > 0){
+            $id = $players->random(1)->first()->id_player;
+            DB::table("playeds")
+                ->where([
+                    ['id_game', $Game->id],
+                    ['id_player', $id]
+                ])
+                ->update(['type'=>'challenger']);
+            return response("Nouveau random challenger pris en compte !", 200)->header('Content-Type', 'text/plain');
+        }else{
+            return response("Fail, no player available !", 200)->header('Content-Type', 'text/plain');
+        }
+
+    }
     public function stateChange($state, $id){
         $Game = Game::getCurrentGame();
         switch ($state){
@@ -24,7 +56,7 @@ class PlayerController extends BaseController
                     ['id_game', $Game->id],
                     ['type', "challenger"]
                 ])
-                ->update(['type'=>'joueur']);
+                ->update(['type'=>'joueur_c']);
 //                Set New Challenger
                 DB::table("playeds")
                 ->where([
@@ -39,7 +71,7 @@ class PlayerController extends BaseController
                         ['id_game', $Game->id],
                         ['id_player', $id]
                     ])
-                    ->update(['type'=>'joueur']);
+                    ->update(['type'=>'joueur_c']);
                 return response("Challenger remove !", 200)->header('Content-Type', 'text/plain');
             case "ban":
                 DB::table("playeds")

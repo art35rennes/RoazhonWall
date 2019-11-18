@@ -36,25 +36,31 @@ function sendAjax($url, $datas = null, $id='#server-results') {
 }
 
 $(".fa-crown").click(function () {
-    sendAjax("/game/player/upstate/"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/player/upstate"+$(this).parent().children(':last-child').val(), []);
 });
 $(".fa-ban").click(function () {
-    sendAjax("/game/player/ban/"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/player/ban"+$(this).parent().children(':last-child').val(), []);
 });
 $(".fa-level-down-alt").click(function () {
-    sendAjax("/game/player/downstate/"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/player/downstate"+$(this).parent().children(':last-child').val(), []);
 });
 $(".fa-times-circle").click(function () {
-    sendAjax("/game/state/dismiss/"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/state/dismiss"+$(this).parent().children(':last-child').val(), []);
 });
 $(".fa-play-circle").click(function () {
-    sendAjax("/game/state/play/"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/state/play"+$(this).parent().children(':last-child').val(), []);
 });
 $("#giveAnswer").click(function () {
-    sendAjax("/game/question/reply/", []);
+    sendAjax("/game/question/reply", []);
 });
 $("#nextQuestion").click(function () {
-    sendAjax("/game/question/next/", []);
+    sendAjax("/game/question/next", []);
+});
+$("#randomChallenger").click(function () {
+    sendAjax("/game/player/random", []);
+});
+$("#randomQuestion").click(function () {
+    sendAjax("/game/question/random", []);
 });
 
 

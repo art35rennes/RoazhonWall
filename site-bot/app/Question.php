@@ -69,17 +69,36 @@ class Question extends Model
     }
 
     static public function setRandomQuestion(){
+        $idGame = Game::getCurrentGame()->id;
         $id = DB::select(DB::raw("
-SELECT DISTINCT questions.id FROM questions 
-LEFT JOIN (SELECT * FROM askeds WHERE askeds.id_game = 2) AS ask ON ask.id_question = questions.id 
-LEFT JOIN (SELECT askeds.id_question, COUNT(askeds.id_question) AS frequence FROM askeds GROUP BY askeds.id_question) AS qFrequence ON qFrequence.id_question = questions.id 
-WHERE ask.id_question IS NULL 
-"));
+            SELECT DISTINCT questions.id FROM questions 
+            LEFT JOIN (SELECT * FROM askeds WHERE askeds.id_game = $idGame) AS ask ON ask.id_question = questions.id 
+            LEFT JOIN (SELECT askeds.id_question, COUNT(askeds.id_question) AS frequence FROM askeds GROUP BY askeds.id_question) AS qFrequence ON qFrequence.id_question = questions.id 
+            WHERE ask.id_question IS NULL AND questions.state = 0
+        "));
 //        dd($id[0]->id);
 
-        DB::table("questions")
-        ->where("id", "=", $id[0]->id)
-        ->update(['state'=>1]);
+        $hasQ = DB::table("questions")
+            ->select("state")
+            ->where("state", ">", 0)
+            ->get()->count();
+
+        if ($hasQ > 0){
+            DB::table('questions')
+                ->where('state', -1)
+                ->update(['state'=>0]);
+            DB::table("questions")
+                ->where("id", "=", $id[0]->id)
+                ->update(['state'=>-1]);
+            return response($id[0]->id ." Question suivante random en attente !", 200)->header('Content-Type', 'text/plain');
+        }else{
+            DB::table("questions")
+                ->where("id", "=", $id[0]->id)
+                ->update(['state'=>1,]);
+            Asked::registerNewAskedQuestion();
+            return response("Question suivante random lancé !", 200)->header('Content-Type', 'text/plain');
+        }
+
     }
     static public function getQuestionResume(){
         return DB::select(DB::raw('

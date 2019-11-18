@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
+use App\Asked;
 use http\Exception;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
@@ -16,6 +18,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class QuestionController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
     public function giveAnswer(){
         DB::table("questions")
             ->where('state', 1)
@@ -32,9 +35,9 @@ class QuestionController extends BaseController
             ->where('state', -1)
             ->update(["state"=>1]);
         if (!$hasBeenUpdate){
-            Question::setRandomQuestion();
-            return response("Pas de question en queu !", 200)->header('Content-Type', 'text/plain');
+            return response("Pas de question en queue !", 200)->header('Content-Type', 'text/plain');
         }else{
+            Asked::registerNewAskedQuestion();
             return response("Question suivante lancé !", 200)->header('Content-Type', 'text/plain');
         }
     }
@@ -48,6 +51,7 @@ class QuestionController extends BaseController
                 DB::table("questions")
                     ->where('state', -1)
                     ->update(['state'=>1]);
+                Asked::registerNewAskedQuestion();
                 return response("La question à été annulé !", 200)->header('Content-Type', 'text/plain');
 
             case "play":
@@ -67,6 +71,7 @@ class QuestionController extends BaseController
                     DB::table('questions')
                         ->where('id', "=", $id)
                         ->update(['state'=>1]);
+                    Asked::registerNewAskedQuestion();
                     return response("La question à été lancé !", 200)->header('Content-Type', 'text/plain');
                 }
         }
