@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="137.74.175.224" id="62874991-7f9f-4dc7-8f0e-df2d0fcc9520" port="22" customName="Sandbox OVH" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="137.74.175.224" id="e2ddaf7a-34e2-4494-b435-c328b217ac25" port="22" customName="Sandbox OVH" nameFormat="CUSTOM" />
+    </configs>
+  </component>
+</project>

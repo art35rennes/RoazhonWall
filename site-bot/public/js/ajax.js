@@ -1,4 +1,4 @@
-function sendAjax($url, $datas = null, $id='#server-results') {
+function sendAjax($url, $datas = null, methode="POST",$id='#server-results') {
 
     if ($datas != null) {
         //ajout du token CSRF
@@ -6,7 +6,7 @@ function sendAjax($url, $datas = null, $id='#server-results') {
         // console.log($datas);
 
         var post_url = $url; //get form action url
-        var request_method = 'POST'; //get form GET/POST method
+        var request_method = methode; //get form GET/POST method
         var form_data = JSON.stringify($datas, null, 1);
 
         // console.log(form_data);
@@ -36,31 +36,31 @@ function sendAjax($url, $datas = null, $id='#server-results') {
 }
 
 $(".fa-crown").click(function () {
-    sendAjax("/game/player/upstate"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/player/upstate/"+$(this).parent().children(':last-child').val(), [], 'GET');
 });
 $(".fa-ban").click(function () {
-    sendAjax("/game/player/ban"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/player/ban/"+$(this).parent().children(':last-child').val(), [], 'GET');
 });
 $(".fa-level-down-alt").click(function () {
-    sendAjax("/game/player/downstate"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/player/downstate/"+$(this).parent().children(':last-child').val(), [], 'GET');
 });
 $(".fa-times-circle").click(function () {
-    sendAjax("/game/state/dismiss"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/state/dismiss/"+$(this).parent().children(':last-child').val(), [], 'GET');
 });
 $(".fa-play-circle").click(function () {
-    sendAjax("/game/state/play"+$(this).parent().children(':last-child').val(), []);
+    sendAjax("/game/state/play/"+$(this).parent().children(':last-child').val(), [], 'GET');
 });
 $("#giveAnswer").click(function () {
-    sendAjax("/game/question/reply", []);
+    sendAjax("/game/question/reply", [], 'GET');
 });
 $("#nextQuestion").click(function () {
-    sendAjax("/game/question/next", []);
+    sendAjax("/game/question/next", [], 'GET');
 });
 $("#randomChallenger").click(function () {
-    sendAjax("/game/player/random", []);
+    sendAjax("/game/player/random", [], 'GET');
 });
 $("#randomQuestion").click(function () {
-    sendAjax("/game/question/random", []);
+    sendAjax("/game/question/random", [], 'GET');
 });
 
 

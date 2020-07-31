@@ -11,8 +11,11 @@
 |
 */
 
+use App\Log;
 use App\Question;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth']], function() {
@@ -26,12 +29,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/game/current', 'GameController@play');
     Route::get('/game/end', 'GameController@end');
 
-    Route::post('/game/state/{state}/{id}', 'QuestionController@stateChange');
-    Route::post('/game/player/{state}/{id}', 'PlayerController@stateChange');
-    Route::post('/game/player/random', 'PlayerController@setRandomChallenger');
-    Route::post('/game/question/reply', 'QuestionController@giveAnswer');
-    Route::post('/game/question/next', 'QuestionController@nextQuestion');
-    Route::post('/game/question/random', function (){return Question::setRandomQuestion();});
+    Route::get('/game/state/{state}/{id}', 'QuestionController@stateChange');
+    Route::get('/game/player/{state}/{id}', 'PlayerController@stateChange');
+    Route::get('/game/player/random', 'PlayerController@setRandomChallenger');
+    Route::get('/game/question/reply', 'QuestionController@giveAnswer');
+    Route::get('/game/question/next', 'QuestionController@nextQuestion');
+    //TODO Route::get('/game/question/dismiss', 'QuestionController@nextQuestion');
+    Route::get('/game/question/random', function (){return Question::setRandomQuestion();});
 
     Route::post('/question/add', 'QuestionController@add');
     Route::get('/question/view/{id?}', 'QuestionController@view');
@@ -40,6 +44,16 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 Auth::routes();
+
+Route::group(['middleware' => ['localhost']], function() {
+    Route::get('/bot/init', 'Ressource@botInit');
+    Route::get('/bot/game', 'Ressource@botGame');
+    Route::get('/bot/question', 'Ressource@botQuestion');
+    Route::get('/bot/answer', 'Ressource@botAnswer');
+    Route::get('/bot/player/{name}', 'Ressource@BotPlayer');
+    Route::get('/bot/answer/{name}/{answer}', 'Ressource@BotPlayerAnswer');
+    Route::get('/bot/score', function (){return Log::calculateScore();});
+});
 
 Route::get('/', function () {
     return redirect('/home');

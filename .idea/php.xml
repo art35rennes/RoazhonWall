@@ -83,6 +83,7 @@
       <path value="$PROJECT_DIR$/site-bot/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/site-bot/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/site-bot/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/site-bot/vendor/symfony/error-handler" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

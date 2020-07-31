@@ -2,27 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a8b7b7-5c3d-4155-ad24-0ad6bbc89c61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site-bot/app/Asked.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/toolbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site-bot/app/Log.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site-bot/app/Played.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site-bot/app/Player.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/botRCK.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/botRCK.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bot/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bot/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/app/Game.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Game.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/GameController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/PlayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/PlayerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/database/migrations/2019_09_10_150611_create_game_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/database/migrations/2019_09_10_150611_create_game_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/database/migrations/2019_09_10_150623_create_played_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/database/migrations/2019_09_10_150623_create_played_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/QuestionrController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Controllers/RessourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Controllers/RessourceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/jquery-easing/jquery.easing.compatibility.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/jquery-easing/jquery.easing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/jquery-easing/jquery.easing.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/jquery/jquery.slim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/jquery/jquery.slim.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site-bot/public/jquery/jquery.slim.min.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/public/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/js/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/public/js/current.js" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/js/current.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/public/js/general.js" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/public/js/general.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/resources/views/game/current.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/game/current.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/resources/views/game/start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/game/start.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site-bot/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/resources/views/layouts/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site-bot/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/site-bot/routes/web.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,14 +151,21 @@
       <path value="$PROJECT_DIR$/site-bot/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/site-bot/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/site-bot/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/site-bot/vendor/symfony/error-handler" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Q1k1fU4sqQYSYdECq5XcnymtDg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -157,12 +173,14 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/site-bot/app" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -175,18 +193,6 @@
       <recent name="D:\Users\Arthur\Documents\GitHub\botRCK\site-bot\resources\views" />
       <recent name="D:\Users\Arthur\Documents\GitHub\botRCK\site-bot\public" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Twitch Bot" type="NodeJSConfigurationType" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/bot">
@@ -215,23 +221,54 @@
       <workItem from="1573574021522" duration="14826000" />
       <workItem from="1574006839090" duration="31576000" />
       <workItem from="1574113060551" duration="5550000" />
+      <workItem from="1574447823239" duration="735000" />
+      <workItem from="1574890690918" duration="10436000" />
+      <workItem from="1575571897092" duration="6102000" />
+      <workItem from="1575731483628" duration="2325000" />
+      <workItem from="1576078554585" duration="189000" />
+      <workItem from="1576637463658" duration="3918000" />
+      <workItem from="1576768953872" duration="12000" />
+      <workItem from="1576780890353" duration="10656000" />
+      <workItem from="1577029406871" duration="11759000" />
+      <workItem from="1577136062033" duration="816000" />
+      <workItem from="1577548191841" duration="3978000" />
+      <workItem from="1577646678665" duration="2038000" />
+      <workItem from="1578171599414" duration="725000" />
+      <workItem from="1578178722333" duration="20000" />
+      <workItem from="1578241953895" duration="1989000" />
+      <workItem from="1578328246414" duration="1116000" />
+      <workItem from="1578496820675" duration="9455000" />
+      <workItem from="1578508244829" duration="213000" />
+      <workItem from="1578508612005" duration="10505000" />
+      <workItem from="1578586156647" duration="1275000" />
+      <workItem from="1578652758413" duration="126000" />
+      <workItem from="1579114812135" duration="12250000" />
+      <workItem from="1579199520445" duration="1880000" />
+      <workItem from="1579644317289" duration="832000" />
+      <workItem from="1579722579735" duration="243000" />
+      <workItem from="1579729662219" duration="8186000" />
+      <workItem from="1579981096466" duration="1411000" />
+      <workItem from="1579988505999" duration="1798000" />
+      <workItem from="1580248852326" duration="8833000" />
+      <workItem from="1581259614812" duration="690000" />
+      <workItem from="1588010395893" duration="2683000" />
+      <workItem from="1588680785618" duration="5000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

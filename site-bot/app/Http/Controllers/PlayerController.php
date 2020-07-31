@@ -14,7 +14,7 @@ class PlayerController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-     public function setRandomChallenger(){
+    public function setRandomChallenger(){
         $Game = Game::getCurrentGame();
 //        Remove Old Challenger
         DB::table("playeds")
@@ -22,7 +22,7 @@ class PlayerController extends BaseController
                 ['id_game', $Game->id],
                 ['type', "challenger"]
             ])
-            ->update(['type'=>'joueur_c']);
+            ->update(['type'=>'out']);
 //        Set New Challenger
         $players = DB::table("playeds")
             ->select()
@@ -56,7 +56,7 @@ class PlayerController extends BaseController
                     ['id_game', $Game->id],
                     ['type', "challenger"]
                 ])
-                ->update(['type'=>'joueur_c']);
+                ->update(['type'=>'out']);
 //                Set New Challenger
                 DB::table("playeds")
                 ->where([
@@ -71,7 +71,7 @@ class PlayerController extends BaseController
                         ['id_game', $Game->id],
                         ['id_player', $id]
                     ])
-                    ->update(['type'=>'joueur_c']);
+                    ->update(['type'=>'out']);
                 return response("Challenger remove !", 200)->header('Content-Type', 'text/plain');
             case "ban":
                 DB::table("playeds")

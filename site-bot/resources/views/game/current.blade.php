@@ -51,16 +51,16 @@
             <div class="col-xl-7">
                 <ul class="nav nav-tabs" id="Tab2" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="players-tab" data-toggle="tab" href="#players" role="tab" aria-controls="players"
-                           aria-selected="true">Joueurs</a>
+                        <a class="nav-link active" id="questions-tab" data-toggle="tab" href="#questions" role="tab" aria-controls="questions"
+                           aria-selected="false">Questions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="questions-tab" data-toggle="tab" href="#questions" role="tab" aria-controls="questions"
-                           aria-selected="false">Questions</a>
+                        <a class="nav-link" id="players-tab" data-toggle="tab" href="#players" role="tab" aria-controls="players"
+                           aria-selected="true">Joueurs</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="TabPQ">
-                    <div class="tab-pane fade show active" id="players" role="tabpanel" aria-labelledby="players-tab">
+                    <div class="tab-pane fade" id="players" role="tabpanel" aria-labelledby="players-tab">
                         <table class="table table-bordered dataTableFull" cellspacing="0">
                             <thead>
                             <tr>
@@ -71,15 +71,17 @@
                             <tbody>
                             @foreach($players as $player)
                                 <tr>
-                                    <td>{{$player->pseudo}}</td>
+                                    <td>{{$player->pseudo}} @if($player->type == "out") <span class="font-weight-light">(éliminé)</span>@endif</td>
                                     <td class="text-center">
-                                        @if($player->type == "joueur")
-                                            <i class="fas fa-crown"></i>
-                                        @elseif($player->type == "challenger")
-                                            <i class="fas fa-level-down-alt"></i>
-                                        @endif
+                                        @if($player->type != "out")
+                                            @if($player->type == "joueur")
+                                        <i class="fas fa-crown"></i>
+                                            @elseif($player->type == "challenger")
+                                        <i class="fas fa-level-down-alt"></i>
+                                            @endif
                                         <i class="ml-1 fas fa-ban"></i>
                                         <input type="hidden" value="{{$player->id_player}}">
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -87,7 +89,7 @@
                         </table>
                         <button id="randomChallenger" class="btn btn-user btn-outline-primary offset-3">Tirer un Challenger au hasard</button>
                     </div>
-                    <div class="tab-pane fade" id="questions" role="tabpanel" aria-labelledby="questions-tab">
+                    <div class="tab-pane fade show active" id="questions" role="tabpanel" aria-labelledby="questions-tab">
                         <table class="table table-bordered dataTableFull">
                             <thead>
                             <th>Titre</th>
@@ -138,10 +140,11 @@
                         <button id="randomQuestion" class="btn btn-user btn-outline-primary offset-3">Tirer une question au hasard</button>
                     </div>
 
+                </div>
             </div>
         </div>
     </div>
-        <div class="row mt-3">
+    <div class="row mt-3">
         @if(isset($cQuestion[0]))
             <div class="card shadow mb-4 col-12" id="cQuestion">
                 <div class="card-header py-3">

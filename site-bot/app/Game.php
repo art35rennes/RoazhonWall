@@ -18,7 +18,7 @@ class Game extends Model
 
     static public function gameIsInProgress(){
         $cGame = DB::table('games')
-            ->select(['id', 'nom','end_at'])
+            ->select(['id', 'nom'])
             ->where('end_at', "=", null)
             ->get();
 
